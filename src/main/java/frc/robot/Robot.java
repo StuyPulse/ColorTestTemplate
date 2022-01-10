@@ -61,7 +61,7 @@ public class Robot extends TimedRobot {
      */
     double IR = m_colorSensor.getIR();
 
-    
+    //Interesting use
 
     /**
      * Open Smart Dashboard or Shuffleboard to see the color detected by the 
