@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Color;
 
+
 import com.revrobotics.ColorSensorV3;
 import com.revrobotics.ColorSensorV3.RawColor;
 import com.revrobotics.ColorMatch;
@@ -29,7 +30,7 @@ public class Robot extends TimedRobot {
    * parameters.
    */
 
-  private final Color kBlueTarget = ColorMatch.makeColor(0.143, 0.427, 0.429);
+  private final Color kBlueTarget = ColorMatch.makeColor(0.23, 0.427, 0.399);
   private final Color kRedTarget = ColorMatch.makeColor(0.561, 0.232, 0.114);
   
   private final ColorMatch m_ColorMatcher = new ColorMatch();
@@ -81,10 +82,12 @@ public class Robot extends TimedRobot {
 
     ColorMatchResult match = m_ColorMatcher.matchClosestColor(detectedCOLOR);
 
-    if (match.color == kBlueTarget) {
+    SmartDashboard.putNumber("Edit blue", 0.4);
+    
+    double num = SmartDashboard.get
+    
+    if (detectedColor.blue > num) {
       colorString = "Blue";
-    } else if (match.color == kRedTarget) {
-      colorString = "Red";
     } else {
       colorString = "unknown";
     }
