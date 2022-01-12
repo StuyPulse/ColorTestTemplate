@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_ColorMatcher.addColorMatch(kBlueTarget);
     m_ColorMatcher.addColorMatch(kRedTarget);
+    SmartDashboard.putNumber("Edit red", 0.4);
   }
 
   @Override
@@ -82,12 +83,14 @@ public class Robot extends TimedRobot {
 
     ColorMatchResult match = m_ColorMatcher.matchClosestColor(detectedCOLOR);
 
-    SmartDashboard.putNumber("Edit blue", 0.4);
     
-    double num = SmartDashboard.get
     
-    if (detectedColor.blue > num) {
-      colorString = "Blue";
+    double num = SmartDashboard.getNumber("Edit red", 0);
+    
+   
+
+    if (detectedColor.red > num) {
+      colorString = "red";
     } else {
       colorString = "unknown";
     }
